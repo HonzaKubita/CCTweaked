@@ -31,7 +31,7 @@ function tryToMove()
   printStatus()
 end
 
-flip = 0
+flip = 1
 
 turtle.refuel()
 
@@ -40,7 +40,7 @@ for i = 1, d3, 1 do
   -- For width
   for j = 1, d2, 1 do
 
-    for k = 1, d1, 1 do
+    for k = 1, d1 - 1, 1 do
       turtle.digDown()
       tryToMove()
     end
