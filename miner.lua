@@ -12,7 +12,7 @@ d3 = read()
 local status = "Mining"
 
 function printStatus()
-  term.clear()
+  -- term.clear()
   print("------ Miner Status ------")
   print("Fuel: "..turtle.getFuelLevel())
   print("Status: "..status)
@@ -44,7 +44,8 @@ for i = 1, d3, 1 do -- For each layer
       tryToMove()
     end
 
-    if j == d2 then -- Prevent normal rotation at the end of last row
+    -- Prevent normal rotation at the end of last row
+    if j == d2 then
       print("Last row break")
       break
     end
