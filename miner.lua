@@ -44,13 +44,13 @@ for i = 1, d3, 1 do -- For each layer
     end
   
     if (j + flip) % 2 == 0 then -- Even row
-      turtle.turnLeft()
+      turtle.turnRight()
       tryToMove()
-      turtle.turnLeft()
+      turtle.turnRight()
     else
-      turtle.turnRight()
+      turtle.turnLeft()
       tryToMove()
-      turtle.turnRight()
+      turtle.turnLeft()
     end
 
   end
