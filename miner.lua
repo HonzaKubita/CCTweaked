@@ -45,15 +45,9 @@ for i = 1, d3, 1 do
       turtle.digDown()
       tryToMove()
     end
-
-    -- Prevent normal rotation at the end of last row
-    if j == d2 then
-      print("Last row break")
-      break
-    end
     
     -- Even row
-    if (j + flip) % 2 == 0 then
+    if (j + flip) % 2 == 0 and j ~= d2 then
       turtle.turnRight()
       tryToMove()
       turtle.turnRight()
