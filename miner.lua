@@ -43,7 +43,7 @@ for i = 1, d3, 1 do -- For each layer
       printStatus()
     end
   
-    if i + flip % 2 == 0 then -- Even row
+    if (j + flip) % 2 == 0 then -- Even row
       turtle.turnRight()
       tryToMove()
       turtle.turnRight()
@@ -58,6 +58,8 @@ for i = 1, d3, 1 do -- For each layer
   -- Rotate at the end
   turtle.turnLeft()
   turtle.turnLeft()
+
+  turtle.down()
 
   if flip == 0 then
     flip = 1
