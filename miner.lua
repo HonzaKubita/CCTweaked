@@ -42,6 +42,10 @@ for i = 1, d3, 1 do -- For each layer
       tryToMove()
       printStatus()
     end
+
+    if j == d1 then -- Prevent normal rotation at the end of last row
+      break
+    end
   
     if (j + flip) % 2 == 0 then -- Even row
       turtle.turnRight()
