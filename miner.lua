@@ -27,6 +27,8 @@ function tryToMove()
   turtle.refuel()
 
   turtle.forward()
+
+  printStatus()
 end
 
 local flip = 0
@@ -40,10 +42,10 @@ for i = 1, d3, 1 do -- For each layer
     for k = 1, d1, 1 do
       turtle.digDown()
       tryToMove()
-      printStatus()
     end
 
     if j == d2 then -- Prevent normal rotation at the end of last row
+      print("Last row break")
       break
     end
   
