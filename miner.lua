@@ -35,9 +35,11 @@ flip = 0
 
 turtle.refuel()
 
-for i = 1, d3, 1 do -- For each layer
+-- For each layer
+for i = 1, d3, 1 do
 
-  for j = 1, d2, 1 do -- For width
+  -- For width
+  for j = 1, d2, 1 do
 
     for k = 1, d1, 1 do
       turtle.digDown()
@@ -49,8 +51,9 @@ for i = 1, d3, 1 do -- For each layer
       print("Last row break")
       break
     end
-  
-    if (j + flip) % 2 == 0 then -- Even row
+    
+    -- Even row
+    if (j + flip) % 2 == 0 then
       turtle.turnRight()
       tryToMove()
       turtle.turnRight()
