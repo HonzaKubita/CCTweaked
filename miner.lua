@@ -18,15 +18,20 @@ function printStatus()
   print("Status: "..status)
 end
 
-function getRefuel()
-
-end
-
 function tryToMove()
+  if turtle.getFuelLevel() == 0 then
+    print("Need fuel (press enter to continue)")
+    read()
+  end
+
+  turtle.refuel()
+
   turtle.forward()
 end
 
 local flip = 0
+
+turtle.refuel()
 
 for i = 1, d3, 1 do -- For each layer
 
