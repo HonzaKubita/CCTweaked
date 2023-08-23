@@ -1,13 +1,13 @@
 -- miner.lua
 
 print("Enter d1 (length):")
-d1 = read()
+d1 = tonumber(read())
 
 print("Enter d2 (width):")
-d2 = read()
+d2 = tonumber(read())
 
 print("Enter d3 (depth):")
-d3 = read()
+d3 = tonumber(read())
 
 local status = "Mining"
 
@@ -46,13 +46,13 @@ for i = 1, d3, 1 do
     end
 
     -- Prevent normal rotation at the end of last row
-    if tonumber(j) == tonumber(d2) then
+    if j == d2 then
       print("Last row break")
       break
     end
     
     -- Even row
-    if (j + flip) % 2 == 0 then
+    if flip % 2 == 0 then
       turtle.turnRight()
       tryToMove()
       turtle.turnRight()
@@ -60,6 +60,12 @@ for i = 1, d3, 1 do
       turtle.turnLeft()
       tryToMove()
       turtle.turnLeft()
+    end
+
+    if flip == 0 then
+      flip = 1
+    else
+      flip = 0
     end
 
   end
@@ -71,11 +77,5 @@ for i = 1, d3, 1 do
   turtle.digDown()
 
   turtle.down()
-
-  if flip == 0 then
-    flip = 1
-  else
-    flip = 0
-  end
 
 end
