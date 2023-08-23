@@ -43,7 +43,7 @@ for i = 1, d3, 1 do -- For each layer
       printStatus()
     end
 
-    if j == d1 then -- Prevent normal rotation at the end of last row
+    if j == d2 then -- Prevent normal rotation at the end of last row
       break
     end
   
