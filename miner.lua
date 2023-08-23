@@ -44,19 +44,18 @@ for i = 1, d3, 1 do -- For each layer
       tryToMove()
     end
 
-    if j == d2 then -- Prevent normal rotation at the end of last row
-      print("Last row break")
-      break
-    end
+    if j ~= d2 then -- Rotate only in normal rows
   
-    if (j + flip) % 2 == 0 then -- Even row
-      turtle.turnRight()
-      tryToMove()
-      turtle.turnRight()
-    else
-      turtle.turnLeft()
-      tryToMove()
-      turtle.turnLeft()
+      if (j + flip) % 2 == 0 then -- Even row
+        turtle.turnRight()
+        tryToMove()
+        turtle.turnRight()
+      else
+        turtle.turnLeft()
+        tryToMove()
+        turtle.turnLeft()
+      end
+
     end
 
   end
