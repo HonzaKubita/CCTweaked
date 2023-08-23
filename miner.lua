@@ -35,7 +35,6 @@ flip = 0
 
 turtle.refuel()
 
--- For each layer
 for i = 1, d3, 1 do
 
   -- For width
@@ -45,9 +44,15 @@ for i = 1, d3, 1 do
       turtle.digDown()
       tryToMove()
     end
+
+    -- Prevent normal rotation at the end of last row
+    if tonumber(j) == tonumber(d2) then
+      print("Last row break")
+      break
+    end
     
     -- Even row
-    if (j + flip) % 2 == 0 and j ~= d2 then
+    if (j + flip) % 2 == 0 then
       turtle.turnRight()
       tryToMove()
       turtle.turnRight()
