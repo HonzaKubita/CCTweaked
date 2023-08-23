@@ -1,13 +1,13 @@
 -- miner.lua
 
 print("Enter d1 (length):")
-local d1 = read()
+d1 = read()
 
 print("Enter d2 (width):")
-local d2 = read()
+d2 = read()
 
 print("Enter d3 (depth):")
-local d3 = read()
+d3 = read()
 
 local status = "Mining"
 
@@ -31,7 +31,7 @@ function tryToMove()
   printStatus()
 end
 
-local flip = 0
+flip = 0
 
 turtle.refuel()
 
