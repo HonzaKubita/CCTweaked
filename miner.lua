@@ -26,6 +26,8 @@ function tryToMove()
 
   turtle.refuel()
 
+  turtle.dig()
+
   turtle.forward()
 
   printStatus()
@@ -44,6 +46,9 @@ for i = 1, d3, 1 do
       turtle.digDown()
       tryToMove()
     end
+
+    -- Remove last block in the row
+    turtle.digDown()
 
     -- Prevent normal rotation at the end of last row
     if j == d2 then
